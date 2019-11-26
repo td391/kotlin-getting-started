@@ -27,6 +27,12 @@ class Controller {
         return "index"
     }
 
+    @RequestMapping("/hello")
+    internal fun hello(model: MutableMap<String, Any>): String {
+        model.put("message", "E=mc^2: 12 GeV = ?")
+        return "hello"
+    }
+
     @RequestMapping("/db")
     internal fun db(model: MutableMap<String, Any>): String {
         val connection = dataSource.getConnection()
